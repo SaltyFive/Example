@@ -12,11 +12,12 @@ type InputUser = {
   password:string,
 }
 
+let id = 0
 const users:User[] = []
 
 async function addUser(user:InputUser) {
   const newUser:User = {
-    id: users.length + 1,
+    id: ++id,
     username: user.username,
     password: user.password
   }
