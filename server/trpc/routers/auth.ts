@@ -6,17 +6,17 @@ type User = {
   password:string,
 }
 
-async function printUser(user:User) {
-  console.log(`你好啊，${user.username}`)
+const users:User[] = []
+
+async function addUser(user:User) {
+  users.push(user)
+  console.log(users)
 }
 
 async function getUsers():Promise<User[]> {
-  const F = {username:'Franklin',password:'maasdf'}
-  const M = {username:'Micheal',password:'kjhjk'}
-  const T = {username:'Trevor',password:'kjsadf'}
-  return [F,M,T]
+  return users
 }
 
 export const authRouter = router({
-
+  
 })
